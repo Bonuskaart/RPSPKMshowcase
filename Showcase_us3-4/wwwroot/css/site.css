@@ -46,16 +46,18 @@ body {
     flex-direction: row;
     align-items: center;
     cursor: pointer;
+    margin: auto;
 }
 
-.btnR:hover {
-    transition: 1000ms;
-    padding: 10px 50px;
-    transform: translateY(-0px);
-    background-color: #00870e;
-    color: #ffffff;
-    border: solid 2px #00870e;
-}
+    .btnR:hover {
+        transition: 1000ms;
+        padding: 10px 50px;
+        transform: translateY(-0px);
+        background-color: #00870e;
+        color: #ffffff;
+        border: solid 2px #00870e;
+        margin: auto;
+    }
 
 
 .btnI {
@@ -74,16 +76,18 @@ body {
     flex-direction: row;
     align-items: center;
     cursor: pointer;
+    margin: auto;
 }
 
-.btnI:hover {
-    transition: 1000ms;
-    padding: 10px 50px;
-    transform: translateY(-0px);
-    background-color: #005a96;
-    color: #ffffff;
-    border: solid 2px #005a96;
-}
+    .btnI:hover {
+        transition: 1000ms;
+        padding: 10px 50px;
+        transform: translateY(-0px);
+        background-color: #005a96;
+        color: #ffffff;
+        border: solid 2px #005a96;
+        margin: auto;
+    }
 
 .btnV {
     font-family: Roboto, sans-serif;
@@ -101,15 +105,15 @@ body {
     flex-direction: row;
     align-items: center;
     cursor: pointer;
+    margin: auto;
 }
 
-.btnV:hover {
-    transition: 1000ms;
-    padding: 10px 50px;
-    transform: translateY(-0px);
-    background-color: #a31212;
-    color: #ffffff;
-    border: solid 2px #a31212;
-}
-
-
+    .btnV:hover {
+        transition: 1000ms;
+        padding: 10px 50px;
+        transform: translateY(-0px);
+        background-color: #a31212;
+        color: #ffffff;
+        border: solid 2px #a31212;
+        margin: auto;
+    }
