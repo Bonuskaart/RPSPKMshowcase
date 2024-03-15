@@ -1,9 +1,17 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <p>
+        <br></br>
+        <br></br>
+        <br></br>
+    </p>
     <div>
     <a class="text-center" href="https://localhost:7158/Identity/Account/Register">
         <button class="btnR"> Registreren</button>
@@ -11,8 +19,16 @@
     <a class="text-center" href="https://localhost:7158/Identity/Account/Login">
         <button class="btnI"> Inloggen</button>
     </a>
+    @if (SignInManager.IsSignedIn(User))
+{
     <a>
-    <button class="btnV"> Vechten!</button>
+    <button id="VechtButton" class="btnV" > Vechten!</button>
     </a>
+}
     </div>
+    <p>
+        <br></br>
+        <br></br>
+    </p>
 </div>
+<script>

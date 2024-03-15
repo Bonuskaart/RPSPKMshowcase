@@ -1,6 +1,8 @@
 ﻿
-//element.addEventListener("click", myFunction);
+const VechtButton = document.getElementById("VechtButton");
 
-//function myFunction() {
-//    ;
-//}
+if (_signInManager.IsSignedIn(this.User)) {
+    VechtButton.style.display = "btnV";
+} else {
+    VechtButton.style.display = "none";
+}
