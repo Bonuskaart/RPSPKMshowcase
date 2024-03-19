@@ -21,7 +21,7 @@
     </a>
     @if (SignInManager.IsSignedIn(User))
 {
-    <a>
+            <a asp-area="" asp-controller="Home" asp-action="Battleview">
     <button id="VechtButton" class="btnV" > Vechten!</button>
     </a>
 }
