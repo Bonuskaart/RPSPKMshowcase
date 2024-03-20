@@ -117,3 +117,14 @@ body {
         border: solid 2px #a31212;
         margin: auto;
     }
+
+.spel-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+

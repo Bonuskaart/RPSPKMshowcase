@@ -8,9 +8,9 @@
 <div class="text-center">
 
     <p>
-        <br></br>
-        <br></br>
-        <br></br>
+        <br>
+        <br>
+        <br>
     </p>
     <div>
     <a class="text-center" href="https://localhost:7158/Identity/Account/Register">
@@ -21,14 +21,13 @@
     </a>
     @if (SignInManager.IsSignedIn(User))
 {
-            <a asp-area="" asp-controller="Home" asp-action="Battleview">
+    <a asp-area="" asp-controller="Home" asp-action="Battleview">
     <button id="VechtButton" class="btnV" > Vechten!</button>
     </a>
 }
     </div>
     <p>
-        <br></br>
-        <br></br>
+        <br>
+        <br>
     </p>
 </div>
-<script>

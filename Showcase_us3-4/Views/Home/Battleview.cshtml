@@ -1,7 +1,18 @@
-﻿<div>
+﻿<script type="module" src="~/js/site.js"></script>
+    <div id="app"></div>
+   
+<steenpapierschaar-app>
+    <template id="app-tpl">
+        <h1>Steen papier schaar</h1>
+        <div class="spel-container">
+            <card-tile id="card-steen" image="steen">steen</card-tile>
+            <card-tile id="card-papier" image="papier">papier</card-tile>
+            <card-tile id="card-schaar" image="schaar">schaar</card-tile>
+        </div>
+    </template>
 
-
-
-
-
-</div>
+    <template id="card-tile-tpl">
+        <img src="" alt="" />
+    </template>
+</steenpapierschaar-app>
+@* <script src="~/js/site.js" asp-append-version="true"></script> *@
