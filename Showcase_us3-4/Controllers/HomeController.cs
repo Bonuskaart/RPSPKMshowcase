@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Showcase_us3_4.Models;
 using System.Diagnostics;
@@ -22,6 +23,7 @@ namespace Showcase_us3_4.Controllers
         {
             return View();
         }
+       [Authorize]
         public IActionResult Battleview()
         {
             return View();
