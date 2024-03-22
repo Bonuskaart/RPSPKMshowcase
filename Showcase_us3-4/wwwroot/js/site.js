@@ -37,7 +37,9 @@ class App extends HTMLElement {
         console.log(event.detail);
 
         let self = this;
-        this.computerChoice = 'schaar';
+        const rnd = generateRandomNumber(1, 3);
+        this.computerChoice = rnd.toString();
+        console.log(this.computerChoice);
         this.playerChoice = event.detail.image;
 
         if (this.computerChoice !== this.playerChoice) {
@@ -48,11 +50,11 @@ class App extends HTMLElement {
         setTimeout(() => {
             if (self.playerChoice === self.computerChoice) {
                 alert('gelijkspel. ' + `speler: ${self.playerChoice} vs computer: ${self.computerChoice}`);
-            } else if (self.playerChoice === 'steen' && self.computerChoice === 'papier') {
+            } else if (self.playerChoice === '1' && self.computerChoice === '2') {
                 alert('computer wint. ' + `speler: ${self.playerChoice} vs computer: ${self.computerChoice}`);
-            } else if (self.playerChoice === 'papier' && self.computerChoice === 'schaar') {
+            } else if (self.playerChoice === '2' && self.computerChoice === '3') {
                 alert('computer wint. ' + `speler: ${self.playerChoice} vs computer: ${self.computerChoice}`);
-            } else if (self.playerChoice === 'schaar' && self.computerChoice === 'steen') {
+            } else if (self.playerChoice === '3' && self.computerChoice === '1') {
                 alert('computer wint. ' + `speler: ${self.playerChoice} vs computer: ${self.computerChoice}`);
             } else {
                 alert('speler wint. ' + `speler: ${self.playerChoice} vs computer: ${self.computerChoice}`);
@@ -69,6 +71,11 @@ class App extends HTMLElement {
     applyEventlisteners() {
         this.addEventListener('cardClick', this.cardClickedHandler);
     }
+   
+}
+
+function generateRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 customElements.define('steenpapierschaar-app', App);

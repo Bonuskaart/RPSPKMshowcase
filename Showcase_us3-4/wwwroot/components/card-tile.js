@@ -17,7 +17,7 @@ class CardTile extends HTMLElement {
             .content.cloneNode(true);
 
         clone.querySelector('img').src = `../images/${this.getAttribute('image')}.png`;
-
+        
         this.shadowRoot.appendChild(clone);
 
         this.applyStyle();
