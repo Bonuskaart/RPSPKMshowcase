@@ -1,4 +1,4 @@
-﻿import '../components/card-tile';
+﻿import '../components/card-tile.js';
 
 const element = document.createElement('steenpapierschaar-app');
 document.body.appendChild(element);

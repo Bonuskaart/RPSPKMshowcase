@@ -16,7 +16,7 @@ class CardTile extends HTMLElement {
             .getElementById('card-tile-tpl')
             .content.cloneNode(true);
 
-        clone.querySelector('img').src = `images/${this.getAttribute('image')}.png`;
+        clone.querySelector('img').src = `../images/${this.getAttribute('image')}.png`;
 
         this.shadowRoot.appendChild(clone);
 
@@ -54,7 +54,7 @@ class CardTile extends HTMLElement {
     applyStyle() {
         const linkElem = document.createElement('link');
         linkElem.setAttribute('rel', 'stylesheet');
-        linkElem.setAttribute('href', 'components/card-tile.css');
+        linkElem.setAttribute('href', '../css/card-tile.css');
         this.shadowRoot.appendChild(linkElem);
     }
 }
