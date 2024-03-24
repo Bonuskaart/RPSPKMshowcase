@@ -18,8 +18,8 @@ namespace Showcase_us3_4.Controllers
         {
             return View();
         }
-
-        public IActionResult Privacy()
+        [Authorize (Roles ="admin")]
+        public IActionResult Admin()
         {
             return View();
         }

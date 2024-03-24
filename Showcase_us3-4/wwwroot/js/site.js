@@ -2,7 +2,11 @@
 
 const element = document.createElement('steenpapierschaar-app');
 document.body.appendChild(element);
+const connection = new signalR.HubConnectionBuilder()
+    .withUrl("../../Data/BattleHubApi.cs")
+    .build();
 
+connection.invoke("JoinLobby", "Lobby1").catch(err => console.error(err));
 class App extends HTMLElement {
     shadowRoot;
 
