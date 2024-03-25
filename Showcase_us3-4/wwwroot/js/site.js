@@ -1,10 +1,12 @@
 ﻿import '../components/card-tile.js';
+//import "../js/signalr/dist/browser/signalr.js";
+//import "../js/chat.js";
 
 const element = document.createElement('steenpapierschaar-app');
 document.body.appendChild(element);
-const connection = new signalR.HubConnectionBuilder()
-    .withUrl("../../Data/BattleHubApi.cs")
-    .build();
+//const connection = new signalR.HubConnectionBuilder()
+//    .withUrl("../../Data/BattleHubApi.cs")
+//    .build();
 
 //connection.invoke("JoinLobby", "Lobby1").catch(err => console.error(err));
 class App extends HTMLElement {
@@ -12,7 +14,7 @@ class App extends HTMLElement {
 
     playerChoice = null;
     computerChoice = null;
-
+    tegenspelerChoice = null;
 
     constructor() {
         super();
@@ -46,6 +48,7 @@ class App extends HTMLElement {
         this.computerChoice = rnd.toString();
         console.log(this.computerChoice);
         this.playerChoice = event.detail.image;
+   
 
             if (this.computerChoice !== this.playerChoice) {
                 this.shadowRoot.getElementById(`card-${this.computerChoice}`).toggleSelected();
@@ -55,18 +58,14 @@ class App extends HTMLElement {
             let scorePlayer1 = 0;
             let scorePlayer2 = 0;
             let levens = 3;
-           // if (scorePlayer1 < levens && scorePlayer2 < levens) {
+
                 if (self.playerChoice === self.computerChoice) {
-                    //message = 'gelijkspel. ' + `speler: ${self.playerChoice} vs computer: ${self.computerChoice}`
-                    //connection.invoke("SendBattleInfoToLobby", "Lobby1", user, message)
-                    //.catch(err => console.error(err));
+
                     alert('gelijkspel. ' + `speler: ${self.playerChoice} vs computer: ${self.computerChoice}`);
                     console.log("score: " + scorePlayer1 + " Tegen " + scorePlayer2);
 
                 } else if (self.playerChoice === '1' && self.computerChoice === '2') {
-                    //message = 'computer wint. ' + `speler: ${self.playerChoice} vs computer: ${self.computerChoice}`
-                    //   connection.invoke("SendBattleInfoToLobby", "Lobby1", user, message)
-                    //.catch(err => console.error(err));
+
                     alert('computer wint. ' + `speler: ${self.playerChoice} vs computer: ${self.computerChoice}`);
                     scorePlayer2 = scorePlayer2 + 1;
                     console.log("score: " + scorePlayer1 + " Tegen " + scorePlayer2);
@@ -83,15 +82,6 @@ class App extends HTMLElement {
                     scorePlayer1 = scorePlayer1 + 1;
                     console.log("score: " + scorePlayer1 + " Tegen " + scorePlayer2);
                 }
-          //  } else if (scorePlayer1 == 3) {
-            //    alert("Gefeliciteerd! je hebt gewonnen!");
-            //    scorePlayer1 = 0;
-            //    scorePlayer2 = 0;
-            //} else {
-            //    alert("Helaas... je hebt verloren");
-            //    scorePlayer1 = 0;
-            //    scorePlayer2 = 0;
-            //}
 
                 self.shadowRoot.querySelectorAll('card-tile').forEach(card => {
                     card.reset();

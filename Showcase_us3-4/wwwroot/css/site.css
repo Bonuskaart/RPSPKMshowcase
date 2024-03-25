@@ -128,3 +128,22 @@ body {
 }
 
 
+.left-half {
+    float: left;
+    width: 50%; /* Adjust width as needed */
+}
+
+.right-half {
+    float: right;
+    width: 50%; /* Adjust width as needed */
+}
+.scaled-image {
+    transform: scale(0.8);
+}
+
+.my-backgound-image {
+    background-image: url('../images/BattleTemp.png')
+}
+.img {
+    transform: scale(0.8);
+}

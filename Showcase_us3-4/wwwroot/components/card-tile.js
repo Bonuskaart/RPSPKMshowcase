@@ -43,6 +43,7 @@ class CardTile extends HTMLElement {
                     id: this.getAttribute('id'),
                     image: this.getAttribute('image')
                 }
+
             })
         );
     }

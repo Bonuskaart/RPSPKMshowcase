@@ -1,12 +1,33 @@
 ﻿<script type="module" src="~/js/site.js"></script>
-<div class="container">
+
+
+
+@* begin webcomponents *@
+     <div id="app" class="left-half"></div>
+<h1 data-cy="page-title">Battle!</h1>
+<div>
+    <img src="../images/battle.png" class="scaled-image" />
+     </div>
+    <template id="app-tpl">
+    
+        <div class="spel-container">
+            <card-tile id="card-1" image="1">1</card-tile>
+            <card-tile id="card-2" image="2">2</card-tile>
+            <card-tile id="card-3" image="3">3</card-tile>
+        </div>
+    </template>
+    <template id="card-tile-tpl">
+        <img src="" alt="" />
+    </template>
+    @* end webcomponents *@
+<div class="right-half">
     <div class="row p-1">
-        <div class="col-1">User</div>
-        <div class="col-5"><input type="text" id="userInput" /></div>
+        <div class="col-1"></div>
+        <div class="col-5"><input type="text" id="userInput" value="Naam" /></div>
     </div>
     <div class="row p-1">
-        <div class="col-1">Message</div>
-        <div class="col-5"><input type="text" class="w-100" id="messageInput" /></div>
+        <div class="col-1"></div>
+        <div class="col-5"><input type="text" class="w-100" id="messageInput" value="Bericht" /></div>
     </div>
     <div class="row p-1">
         <div class="col-6 text-end">
@@ -25,22 +46,10 @@
     </div>
 </div>
 <script src="~/js/signalr/dist/browser/signalr.js"></script>
-<script src="~/js/chat.js"></script> 
-
-
-@* begin webcomponents *@
-     <div id="app"></div>
-    <template id="app-tpl">
-    <h1 data-cy="page-title">Battle!</h1>
-        <div class="spel-container">
-            <card-tile id="card-1" image="1">1</card-tile>
-            <card-tile id="card-2" image="2">2</card-tile>
-            <card-tile id="card-3" image="3">3</card-tile>
-        </div>
-    </template>
-    <template id="card-tile-tpl">
-        <img src="" alt="" />
-    </template>
+<script src="~/js/chat.js"></script>
+@* <div class="col-6">
+    <ul id="winnerList"></ul>
+</div> *@
 @* <script src="~/js/signalr/dist/browser/signalr.js"></script>
 <script defer src="~/js/chat.js"></script> *@
 @* <script src="~/js/site.js" asp-append-version="true"></script> *@

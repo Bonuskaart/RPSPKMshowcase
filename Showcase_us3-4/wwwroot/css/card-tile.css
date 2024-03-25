@@ -3,6 +3,7 @@
     border: 1px solid darkgray;
     border-radius: 4px;
     padding: 5px;
+    transform: scale(0.7);
 }
 
     img:hover {
