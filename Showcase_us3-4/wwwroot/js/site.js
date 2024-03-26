@@ -36,7 +36,7 @@ class App extends HTMLElement {
         const linkElem = document.createElement('link');
         linkElem.setAttribute('rel', 'stylesheet');
         linkElem.setAttribute('href', 'app.css');
-        //this.shadowRoot.appendChild(linkElem);
+        this.shadowRoot.appendChild(linkElem);
     }
 
     cardClickedHandler(event) {
@@ -45,7 +45,7 @@ class App extends HTMLElement {
 
         let self = this;
         const rnd = generateRandomNumber(1, 3);
-        this.computerChoice = rnd.toString();
+        this.computerChoice = rnd.toString() + rnd.toString() + rnd.toString();
         console.log(this.computerChoice);
         this.playerChoice = event.detail.image;
    
@@ -64,21 +64,21 @@ class App extends HTMLElement {
                     alert('gelijkspel. ' + `speler: ${self.playerChoice} vs computer: ${self.computerChoice}`);
                     console.log("score: " + scorePlayer1 + " Tegen " + scorePlayer2);
 
-                } else if (self.playerChoice === '1' && self.computerChoice === '2') {
+                } else if (self.playerChoice === '111' && self.computerChoice === '222') {
 
-                    alert('computer wint. ' + `speler: ${self.playerChoice} vs computer: ${self.computerChoice}`);
+                    alert('computer wint. ' + `speler: Attack vs computer: Defend`);
                     scorePlayer2 = scorePlayer2 + 1;
                     console.log("score: " + scorePlayer1 + " Tegen " + scorePlayer2);
-                } else if (self.playerChoice === '2' && self.computerChoice === '3') {
-                    alert('computer wint. ' + `speler: ${self.playerChoice} vs computer: ${self.computerChoice}`);
+                } else if (self.playerChoice === '222' && self.computerChoice === '333') {
+                    alert('computer wint. ' + `speler: Defend vs computer: Flank`);
                     scorePlayer2 = scorePlayer2 + 1;
                     console.log("score: " + scorePlayer1 + " Tegen " + scorePlayer2);
-                } else if (self.playerChoice === '3' && self.computerChoice === '1') {
-                    alert('computer wint. ' + `speler: ${self.playerChoice} vs computer: ${self.computerChoice}`);
+                } else if (self.playerChoice === '333' && self.computerChoice === '111') {
+                    alert('computer wint. ' + `speler: Flank vs computer: Attack`);
                     scorePlayer2 = scorePlayer2 + 1;
                     console.log("score: " + scorePlayer1 + " Tegen " + scorePlayer2);
                 } else {
-                    alert('speler wint. ' + `speler: ${self.playerChoice} vs computer: ${self.computerChoice}`);
+                    alert('Je hebt gewonnen, gefeliciteerd!! ');
                     scorePlayer1 = scorePlayer1 + 1;
                     console.log("score: " + scorePlayer1 + " Tegen " + scorePlayer2);
                 }

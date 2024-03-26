@@ -18,10 +18,6 @@ namespace Showcase_us3_4.Controllers
         {
             return View();
         }
-        public IActionResult ChatHub()
-        {
-            return View();
-        }
         [Authorize (Roles ="admin")]
         public IActionResult Admin()
         {
