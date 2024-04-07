@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Showcase_us3_4.Data;
 using Microsoft.EntityFrameworkCore.Sqlite;
+using Showcase_us3_4.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,10 +11,19 @@ var connectionString = builder.Configuration.GetConnectionString("Develop") ?? t
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+builder.Services.AddSignalR();
+builder.Services.AddSingleton(() => new HttpClient(
+    new SocketsHttpHandler { PooledConnectionLifetime = TimeSpan.FromMinutes(2) }
+));
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(10);
+});
+
 
 var app = builder.Build();
 
@@ -40,5 +50,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
-
+app.MapHub<BattleHubApi>("/BattleHubApi");
 app.Run();

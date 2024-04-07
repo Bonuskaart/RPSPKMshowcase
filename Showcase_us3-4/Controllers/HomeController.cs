@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Showcase_us3_4.Models;
 using System.Diagnostics;
@@ -17,12 +18,16 @@ namespace Showcase_us3_4.Controllers
         {
             return View();
         }
-
-        public IActionResult Privacy()
+        [Authorize (Roles ="admin")]
+        public IActionResult Admin()
         {
             return View();
         }
-
+       [Authorize]
+        public IActionResult Battleview()
+        {
+            return View();
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

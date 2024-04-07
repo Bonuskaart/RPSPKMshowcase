@@ -1,0 +1,54 @@
+﻿<script type="module" src="~/js/site.js"></script>
+
+
+
+@* begin webcomponents *@
+     <div id="app" class="left-half"></div>
+
+
+    <template id="app-tpl">
+    <h3 data-cy="page-title">Battle!</h3>
+    <img src="../images/battle.png" class="scaled-image" />
+        <div class="spel-container">
+            <card-tile id="card-111" image="111">111</card-tile>
+            <card-tile id="card-222" image="222">222</card-tile>
+            <card-tile id="card-333" image="333">333</card-tile>
+        </div>
+    </template>
+    <template id="card-tile-tpl">
+        <img src="" alt="" />
+    </template>
+    @* end webcomponents *@
+<div class="right-half">
+    <div class="row p-1">
+        <div class="col-1"></div>
+        <div class="col-5"><input type="text" id="userInput" value="Naam" /></div>
+    </div>
+    <div class="row p-1">
+        <div class="col-1"></div>
+        <div class="col-5"><input type="text" class="w-100" id="messageInput" value="Bericht" /></div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6 text-end">
+            <input type="button" id="sendButton" value="Send Message" />
+        </div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6">
+            <hr />
+        </div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6">
+            <ul id="messagesList"></ul>
+        </div>
+    </div>
+</div>
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>
+@* <div class="col-6">
+    <ul id="winnerList"></ul>
+</div> *@
+@* <script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script defer src="~/js/chat.js"></script> *@
+@* <script src="~/js/site.js" asp-append-version="true"></script> *@
